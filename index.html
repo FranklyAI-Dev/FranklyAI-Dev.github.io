@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frank Xia - Custom AI Developer</title>
+    <!-- Use Inter font from Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- All styling is in this <style> tag for simplicity -->
+    <style>
+        :root {
+            --bg-color: #f8f9fa;
+            --text-color: #212529;
+            --primary-color: #007bff;
+            --card-bg: #ffffff;
+            --shadow: 0 4px 12px rgba(0,0,0,0.05);
+            --border-radius: 12px;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            line-height: 1.7;
+        }
+        
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        /* --- Header / Hero --- */
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        .header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin: 0;
+            color: var(--primary-color);
+        }
+        .header h2 {
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: #495057;
+            margin: 10px 0;
+        }
+        .header p {
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 20px auto 0;
+        }
+
+        /* --- Section Heading --- */
+        .section-heading {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 40px;
+            color: var(--text-color);
+        }
+        
+        /* --- Portfolio Section --- */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: 1fr; /* Only one column for now */
+            gap: 30px;
+        }
+        
+        .project-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+        }
+        
+        .project-card img {
+            width: 100%;
+            height: auto;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .project-content {
+            padding: 30px;
+        }
+        
+        .project-title {
+            font-size: 1.75rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        .project-description {
+            font-size: 1rem;
+            margin-bottom: 25px;
+        }
+        
+        .project-tags {
+            margin-bottom: 25px;
+        }
+        
+        .tag {
+            display: inline-block;
+            background-color: #e9ecef;
+            color: #495057;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin: 0 5px 5px 0;
+        }
+        
+        .project-links a {
+            display: inline-block;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 12px 24px;
+            border-radius: 8px;
+            margin-right: 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .link-live {
+            background-color: var(--primary-color);
+            color: #ffffff;
+        }
+        .link-live:hover {
+            background-color: #0056b3;
+        }
+        
+        .link-code {
+            background-color: transparent;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+        .link-code:hover {
+            background-color: var(--primary-color);
+            color: #ffffff;
+        }
+
+        /* --- Services Section --- */
+        .services-list {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            text-align: center;
+        }
+        
+        .services-list li {
+            background-color: var(--card-bg);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        /* --- Contact Section --- */
+        .contact {
+            text-align: center;
+            background-color: var(--card-bg);
+            padding: 50px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            margin-top: 60px;
+        }
+        
+        .contact p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+        
+        .contact-btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            padding: 15px 30px;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+        }
+        .contact-btn:hover {
+            background-color: #0056b3;
+        }
+        
+        /* --- Footer --- */
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            color: #6c757d;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <!-- === HEADER / HERO SECTION === -->
+        <header class="header">
+            <h1>FranklyAI-Dev</h1>
+            <h2>Custom AI & Web Application Developer</h2>
+            <p>
+                I help small businesses and entrepreneurs build custom AI-powered tools. 
+                I turn your data and ideas into intelligent, automated applications that save you time and money.
+            </p>
+        </header>
+
+        <!-- === PORTFOLIO SECTION === -->
+        <section id="portfolio">
+            <h2 class="section-heading">My Work</h2>
+            
+            <div class="portfolio-grid">
+                
+                <!-- START OF PROJECT 1 -->
+                <div class="project-card">
+                    <!-- 
+                        IMPORTANT: 
+                        Make sure you take a screenshot of your app,
+                        name it 'project1.png', and place it in an 'images' folder.
+                    -->
+                    <img src="images/project1.jpg" alt="Screenshot of the Chat With Your Document app">
+                    
+                    <div class="project-content">
+                        <h3 class="project-title">Multi-User "Chat with Your Data" RAG App</h3>
+                        
+                        <p class="project-description">
+                            A full-stack web application that allows multiple users to upload their own documents (PDFs or TXTs) 
+                            and have real-time conversations with an AI that *only* uses information from those documents.
+                            All documents and chat histories are saved permanently in a cloud database.
+                        </p>
+                        
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Flask</span>
+                            <span class="tag">Google Gemini API</span>
+                            <span class="tag">RAG</span>
+                            <span class="tag">Firestore</span>
+                            <span class="tag">HTML/CSS/JS</span>
+                            <span class="tag">Render</span>
+                            <span class="tag">GitHub</span>
+                        </div>
+                        
+                        <div class="project-links">
+                            <!-- 
+                                IMPORTANT: 
+                                Update these links to your real URLs!
+                            -->
+                            <a href="https://frank-ai-bot.onrender.com" target="_blank" class="link-live">View Live Demo</a>
+                            <a href="https://github.com/FranklyAI-Dev/my-ai-bot-project" target="_blank" class="link-code">View GitHub Code</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- END OF PROJECT 1 -->
+                
+                <!-- You can copy/paste the 'project-card' div to add more projects -->
+                
+            </div>
+        </section>
+
+        <!-- === SERVICES SECTION === -->
+        <section id="services" style="margin-top: 60px;">
+            <h2 class="section-heading">What I Can Do For You</h2>
+            
+            <ul class="services-list">
+                <li>Custom AI Chatbot Development</li>
+                <li>Document Analysis & RAG Systems</li>
+                <li>Python (Flask) Backend Development</li>
+                <li>AI API Integration (Gemini, OpenAI)</li>
+                <li>Cloud Database Integration (Firestore)</li>
+                <li>Full-Stack Application Deployment</li>
+            </ul>
+        </section>
+
+        <!-- === CONTACT SECTION === -->
+        <section id="contact" class="contact">
+            <h2>Let's Build Something Together</h2>
+            <p>
+                Have an idea for an AI tool or an automation project? 
+                I'd love to hear about it.
+            </p>
+            <!-- 
+                IMPORTANT: 
+                Update this with your real email address.
+            -->
+            <a href="mailto:your-email@example.com" class="contact-btn">Get in Touch</a>
+        </section>
+        
+        <!-- === FOOTER === -->
+        <footer>
+            <p>&copy; 2025 FranklyAI-Dev</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
+
